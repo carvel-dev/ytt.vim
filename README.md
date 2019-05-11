@@ -1,4 +1,6 @@
 # ytt.vim
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Latest: Release](https://img.shields.io/github/release/cappyzawa/ytt.vim.svg)](https://github.com/cappyzawa/ytt.vim/releases)
 
 vim plugin for [ytt](https://get-ytt.io)
 
