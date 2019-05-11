@@ -7,8 +7,8 @@ endif
 
 let g:loaded_ytt = 1
 
-let s:save_cpo = &cpoptions
-set cpoptions&vim
+let s:save_cpo = &cpo
+set cpo&vim
 
 " plugin code is here
 command! -bar EnableYtt call ytt#enable()
@@ -25,5 +25,5 @@ if !g:ytt_no_default_mappings
   nmap <Leader>dy <Plug>(disable-ytt)
 endif
 
-let &cpoptions = s:save_cpo
+let &cpo = s:save_cpo
 unlet s:save_cpo
