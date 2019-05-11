@@ -1,0 +1,61 @@
+resources:
+- name: release
+  type: github-release
+  source:
+    owner: cappyzawa
+    repository: ytt.vim
+    access_token: ((github-access-token))
+- name: version
+  type: semver
+  source:
+    driver: git
+    uri: git@github.com:cappyzawa/ytt.vim.git
+    branch: version
+    private_key: ((private-key))
+    commit_message: '[ci skip] bump version'
+    file: VERSION
+- name: repo
+  type: git
+  source:
+    uri: https://github.com/cappyzawa/ytt.vim
+    branch: master
+jobs:
+- name: patch-release
+  build_logs_to_retain: 10
+  plan:
+  - aggregate:
+    - get: repo
+    - put: version
+      params:
+        bump: patch
+  - put: release
+    params:
+      name: version/version
+      tag: version/version
+      tag_prefix: v
+- name: minor-release
+  build_logs_to_retain: 10
+  plan:
+  - aggregate:
+    - get: repo
+    - put: version
+      params:
+        bump: minor
+  - put: release
+    params:
+      name: version/version
+      tag: version/version
+      tag_prefix: v
+- name: major-release
+  build_logs_to_retain: 10
+  plan:
+  - aggregate:
+    - get: repo
+    - put: version
+      params:
+        bump: major
+  - put: release
+    params:
+      name: version/version
+      tag: version/version
+      tag_prefix: v
