@@ -18,8 +18,16 @@ function! ytt#enable()
   let l:set_with_contained = 1
   call starlark#set_syntax(l:set_with_contained)
 
+  syn match yttConditional "if/end" contains=starlarkConditional contained
+  syn match yttRepeat "for/end" contains=starlarkRepeat contained
+  syn match yttEnd "end" contained
+
+  hi def link yttConditional Conditional
+  " hi def link yttRepeat Repeat
+  hi def link yttEnd Statement
+
   syn region yttStatement start="#@" end="$"
-        \ contains=starlarkStatement,starlarkConditional,starlarkRepeat,starlarkOperator,starlarkType,starlarkBuitin,starlarkInclude,starlarkBlock,starlarkString
+        \ contains=starlarkStatement,starlarkConditional,starlarkRepeat,starlarkOperator,starlarkType,starlarkBuitin,starlarkInclude,starlarkBlock,starlarkParen,starlarkString,yttConditional,yttRepeat,yttEnd
   hi def link yttStatement Comment
 
   syn sync minlines=500
