@@ -19,7 +19,7 @@ function! ytt#enable()
   call starlark#set_syntax(l:set_with_contained)
 
   syn region yttStatement start="#@" end="$"
-        \ contains=starlarkStatement,starlarkConditional,starlarkRepeat,starlarkOperator,starlarkType,starlarkBuitin,starlarkInclude,starlarkBlock
+        \ contains=starlarkStatement,starlarkConditional,starlarkRepeat,starlarkOperator,starlarkType,starlarkBuitin,starlarkInclude,starlarkBlock,starlarkString
   hi def link yttStatement Comment
 
   syn sync minlines=500
