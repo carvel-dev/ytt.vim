@@ -20,7 +20,7 @@ function! ytt#enable()
 
   syn match yttConditional "if/end" contains=starlarkConditional contained
   syn match yttRepeat "for/end" contains=starlarkRepeat contained
-  syn match yttEnd "end" contained
+  syn match yttEnd " end$" contained
   syn match yttSpecial "#@" contained
 
   hi def link yttConditional Conditional
