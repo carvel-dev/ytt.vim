@@ -26,6 +26,7 @@ function! ytt#enable()
   syn match yttOperator "=" contained
   syn match yttOperator "!" contained
   syn match yttOperator ":" contained
+  syn match yttOperator "\." contained
 
   hi def link yttConditional Conditional
   hi def link yttRepeat Repeat
