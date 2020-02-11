@@ -4,6 +4,14 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
+function! YttEnter()
+  if getline(".") =~ '^#@.*$'
+    return "\<Esc>o#@ "
+  else
+    return "\<CR>"
+  endif
+endfunction
+
 function! ytt#enable()
   if exists(':ALEDisable') != 0
     :ALEDisable
@@ -40,6 +48,8 @@ function! ytt#enable()
   hi def link yttStatement Comment
 
   syn sync minlines=500
+
+  imap <expr> <CR> YttEnter()
 endfunction
 
 function! ytt#disable()
