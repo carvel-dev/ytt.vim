@@ -25,6 +25,7 @@ function! ytt#enable()
   syn match yttOperator "[+|=|!|:|\.]" contained
   syn match yttFunction "[A-Za-z_]*(" contained
   syn match yttFunction "[)|,]" contained
+  syn match yttBlock "[{|}]" contained
 
   hi def link yttConditional Conditional
   hi def link yttRepeat Repeat
@@ -32,9 +33,10 @@ function! ytt#enable()
   hi def link yttSpecial Special
   hi def link yttOperator Operator
   hi def link yttFunction Function
+  hi def link yttBlock Operator
 
   syn region yttStatement start="#@" end="$"
-        \ contains=starlarkStatement,starlarkConditional,starlarkRepeat,starlarkOperator,starlarkType,starlarkBuitin,starlarkInclude,starlarkBlock,starlarkParen,starlarkString,,yttSpecial,yttConditional,yttRepeat,yttEnd,yttOperator,yttFunction
+        \ contains=starlarkStatement,starlarkConditional,starlarkRepeat,starlarkOperator,starlarkType,starlarkBuitin,starlarkInclude,starlarkBlock,starlarkParen,starlarkString,,yttSpecial,yttConditional,yttRepeat,yttEnd,yttOperator,yttFunction,yttBlock
   hi def link yttStatement Comment
 
   syn sync minlines=500
