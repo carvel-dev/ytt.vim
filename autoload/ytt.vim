@@ -28,7 +28,7 @@ function! ytt#enable()
 
   syn match yttConditional "if/end" contains=starlarkConditional contained
   syn match yttRepeat "for/end" contains=starlarkRepeat contained
-  syn match yttEnd " end$" contained
+  syn match yttEnd "\<end\>" contained
   syn match yttSpecial "#@" contained
   syn match yttOperator "[+|=|!|:|\.]" contained
   syn match yttFunction "[A-Za-z_]*(" contained
@@ -45,7 +45,7 @@ function! ytt#enable()
 
   syn region yttStatement start="#@" end="$"
         \ contains=starlarkStatement,starlarkConditional,starlarkRepeat,starlarkOperator,starlarkType,starlarkBuitin,starlarkInclude,starlarkBlock,starlarkParen,starlarkString,,yttSpecial,yttConditional,yttRepeat,yttEnd,yttOperator,yttFunction,yttBlock
-  hi def link yttStatement Comment
+  highlight yttStatement guifg=Pink
 
   syn sync minlines=500
 
