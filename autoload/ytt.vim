@@ -5,7 +5,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! YttEnter()
-  if getline(".") =~ '^#@.*$'
+  if getline('.') =~# '^#@.*$'
     return "\<Esc>o#@ "
   else
     return "\<CR>"
