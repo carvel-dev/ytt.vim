@@ -1,8 +1,8 @@
 # ytt.vim
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Latest: Release](https://img.shields.io/github/release/k14s/ytt.vim.svg)](https://github.com/k14s/ytt.vim/releases)
+[![Latest: Release](https://img.shields.io/github/release/vmware-tanzu/ytt.vim.svg)](https://github.com/k14s/ytt.vim/releases)
 
-vim plugin for [ytt](https://get-ytt.io)
+vim plugin for [ytt](https://carvel.dev/ytt/)
 
 ## Install
 To install using [Vim-Plug](https://github.com/junegunn/vim-plug):
@@ -10,7 +10,7 @@ To install using [Vim-Plug](https://github.com/junegunn/vim-plug):
 ```
 " add this line to your .vimrc file
 Plug 'cappyzawa/starlark.vim'
-Plug 'k14s/ytt.vim'
+Plug 'vmware-tanzu/ytt.vim'
 ```
 
 This plugin requires [cappyzawa/starlark\.vim: vim plugin for starlark](https://github.com/cappyzawa/starlark.vim).
