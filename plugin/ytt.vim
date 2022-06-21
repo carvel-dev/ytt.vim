@@ -17,7 +17,7 @@ command! -bar DisableYtt call ytt#disable()
 nnoremap <silent> <Plug>(enable-ytt) :<C-u>EnableYtt<CR>
 nnoremap <silent> <Plug>(disable-ytt) :<C-u>DisableYtt<CR>
 
-if !exists('g:ytt_no_default_mapping')
+if !exists('g:ytt_no_default_mappings')
   let g:ytt_no_default_mappings = v:false
 endif
 if !g:ytt_no_default_mappings
