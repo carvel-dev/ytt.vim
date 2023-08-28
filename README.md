@@ -10,7 +10,7 @@ To install using [Vim-Plug](https://github.com/junegunn/vim-plug):
 ```
 " add this line to your .vimrc file
 Plug 'cappyzawa/starlark.vim'
-Plug 'vmware-tanzu/ytt.vim'
+Plug 'carvel-dev/ytt.vim'
 ```
 
 This plugin requires [cappyzawa/starlark\.vim: vim plugin for starlark](https://github.com/cappyzawa/starlark.vim).
